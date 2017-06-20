@@ -1,6 +1,5 @@
 'use strict';
 
-
 var mongoose = require('mongoose'),
   Party = mongoose.model('Party');
 

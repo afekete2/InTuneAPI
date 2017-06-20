@@ -2,7 +2,6 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
 var PartySchema = new Schema({
   name: {
     type: String,
@@ -13,10 +12,15 @@ var PartySchema = new Schema({
     Required: 'Password required.'
   },
   host: {
-    type: String
+    type: String,
+    Required: 'Host required'
   },
   guests: [String],
-  tracks: [{uri: {type: String}}]
+  tracks: [{
+    uri: {type: String},
+    name: {type: String},
+    artists: [String]
+  }]
 });
 
 module.exports = mongoose.model('Party', PartySchema);
